@@ -1,24 +1,12 @@
 # social-listening-system
 A social listening system developed using aspect-based sentiment analysis.
 
-A. Dataset Creation
-The SN Scrape library was utilized to scrape tweets with a
-specific hashtag from Twitter in order to collect the Twitter
-dataset. A total of 10000 tweets with the hashtag
-“#phonereviews” between January 1st, 2021 and March
-24th, 2023 were gathered, and each tweet was stored as a row
-in a CSV file containing the tweet's date, ID, and text content.
-Following the retrieval of the tweets, data was preprocessed.
-Regular expressions were utilized to remove any URLs from
-the tweets. In addition, it was observed that some tweets
-included URLs pointing to external content, rather than
-having text themselves. To address this issue, the contents of
-each URL were scraped using the BeautifulSoup library and
-the URL in the tweet text was replaced with the scraped text.
-The resulting dataset contained a CSV file with the following
-columns: 'Datetime' (the timestamp of the tweet), 'Tweet Id'
-(the unique identifier of the tweet), and 'Text' (the cleaned and
-preprocessed text of the tweet). This dataset was then used
-for further analysis and modeling.
-The scraper was also used to extract data from Amazon, in
-order to enhance it.
+ABSA is a more advanced and specific form of SA. While SA aims to determine the overall polarity (positive, negative, or neutral) of a given text, ABSA goes beyond this by analyzing the sentiment towards specific aspects or features of the product or service being discussed.
+
+ABSA provides a more granular and detailed view of the sentiment expressed in the text. This information can be very valuable for businesses, as it can help them understand what specific aspects of their products or services are being praised or criticized by customers. This knowledge can be used to improve the quality of the product or service, address customer concerns, and ultimately increase customer satisfaction and loyalty.
+
+To parse the reviews posted by various customers, natural language processing techniques need to be applied. Review data can be collected from e-commerce websites like Amazon, Flipkart or from social media websites like Twitter.
+
+Even though Bi-LSTM can be used to perform ABSA, it is not always guaranteed that every review extracted will contain information in the same format and same aspects.
+
+The proposed model parses all reviews related to the given mobile phone model and generates a report as illustrated. Based on the number of positive and negative reviews, the user is advised whether or not to buy the product. Splitting the reviews into various aspects helps customers as well as business owners to make informed choices.
